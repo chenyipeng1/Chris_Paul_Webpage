@@ -2,12 +2,10 @@ var data = [];
 var plot_data = [];
 
 $(document).ready(function () {
-    d3.csv("/data/cp3.csv", function(d){
+    d3.csv("../data/cp3.csv", function(d){
         data = d;
         key = "PTS";
         load_plot_data(key);
-        console.log(data);
-        console.log(plot_data);
         draw(key);
 
         add_table();
@@ -35,7 +33,6 @@ function add_table(){
                 }
             markup += "</tr>"
         }
-        console.log(markup)
     }
     $("#add_table").append(markup);
 }
